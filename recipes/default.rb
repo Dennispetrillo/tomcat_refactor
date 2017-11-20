@@ -30,54 +30,54 @@ tar_extract 'http://supergsego.com/apache/tomcat/tomcat-8/v8.5.23/bin/apache-tom
   tar_flags [ '-P', '--strip-components 1' ]
 end
 
-include_recipe "fileutils::default"
+#include_recipe "fileutils::default"
 
 fileutils '/opt/tomcat' do
   recursive true
   group 'tomcat'
 end
 
-fileutils '/opt/tomcat/conf' do
-  recursive true
-  file_mode ['g+r']
-  directory_mode ['g+r']
-end
+#fileutils '/opt/tomcat/conf' do
+#  recursive true
+#  file_mode ['g+r']
+#  directory_mode ['g+r']
+#end
 
-directory 'opt/tomcat/conf' do
-  mode '0750'
-end
+#directory 'opt/tomcat/conf' do
+#  mode '0750'
+#end
 
-filetutils '/opt/tomcat/webapps/' do
-  recursive true
-  owner 'tomcat'
-end
+#filetutils '/opt/tomcat/webapps/' do
+#  recursive true
+#  owner 'tomcat'
+#end
 
-filetutils '/opt/tomcat/work/' do
-  recursive true
-  owner 'tomcat'
-end
+#filetutils '/opt/tomcat/work/' do
+#  recursive true
+#  owner 'tomcat'
+#end
 
-filetutils '/opt/tomcat/temp/' do
-  recursive true
-  owner 'tomcat'
-end
+#filetutils '/opt/tomcat/temp/' do
+#  recursive true
+#  owner 'tomcat'
+#end
 
-filetutils '/opt/tomcat/logs/' do
-  recursive true
-  owner 'tomcat'
-end  
+#filetutils '/opt/tomcat/logs/' do
+#  recursive true
+#  owner 'tomcat'
+#end  
 
-template '/etc/systemd/system/tomcat.service' do
-  source 'systemd.erb'
-end
+#template '/etc/systemd/system/tomcat.service' do
+#  source 'systemd.erb'
+#end
 
-execute 'daemon reload' do
-  command 'systemctl daemon-reload'
-end
+#execute 'daemon reload' do
+#  command 'systemctl daemon-reload'
+#end
 
-service 'tomcat' do
-  action [:start, :enable]
-end
+#service 'tomcat' do
+#  action [:start, :enable]
+#end
 
 
 

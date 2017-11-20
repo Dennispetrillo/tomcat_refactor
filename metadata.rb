@@ -4,7 +4,7 @@ maintainer_email 'you@example.com'
 license 'All Rights Reserved'
 description 'Installs/Configures tomcat_refactor'
 long_description 'Installs/Configures tomcat_refactor'
-version '0.1.0'
+version '0.1.4'
 chef_version '>= 12.1' if respond_to?(:chef_version)
 
 depends 'tar', '~> 2.1.1'
