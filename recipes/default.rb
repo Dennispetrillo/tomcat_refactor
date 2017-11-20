@@ -23,7 +23,7 @@ end
 
 include_recipe "tar::default"
 
-tar_extract 'http://supergsego.com/apache/tomcat/tomcat-8/v8.5.23/bin/apache-tomcat-8.5.23.tar.gz'
+tar_extract 'http://supergsego.com/apache/tomcat/tomcat-8/v8.5.23/bin/apache-tomcat-8.5.23.tar.gz' do
   action :extract
   target_dir '/opt/tomcat'
   creates '/opt/tomcat/lib'
