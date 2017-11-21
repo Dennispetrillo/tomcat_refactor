@@ -47,25 +47,14 @@ directory 'opt/tomcat/conf' do
   mode '0750'
 end
 
-fileutils '/opt/tomcat/webapps/' do
-  recursive true
-  owner 'tomcat'
-end
+changeOwnerDirectories = [ '/opt/tomcat/work/', '/opt/tomcat/logs/', '/opt/tomcat/temp/', '/opt/tomcat/webapps' ]
 
-fileutils '/opt/tomcat/work/' do
-  recursive true
-  owner 'tomcat'
+changeOwnerDirectories.each do |dir|
+  fileutils dir do
+    recursive true
+    owner 'tomcat'
+  end
 end
-
-fileutils '/opt/tomcat/temp/' do
-  recursive true
-  owner 'tomcat'
-end
-
-fileutils '/opt/tomcat/logs/' do
-  recursive true
-  owner 'tomcat'
-end  
 
 template '/etc/systemd/system/tomcat.service' do
   source 'systemd.erb'
