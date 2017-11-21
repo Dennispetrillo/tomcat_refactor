@@ -47,10 +47,10 @@ directory 'opt/tomcat/conf' do
   mode '0750'
 end
 
-#filetutils '/opt/tomcat/webapps/' do
-#  recursive true
-#  owner 'tomcat'
-#end
+fileutils '/opt/tomcat/webapps/' do
+  recursive true
+  owner 'tomcat'
+end
 
 #filetutils '/opt/tomcat/work/' do
 #  recursive true
