@@ -67,17 +67,17 @@ fileutils '/opt/tomcat/logs/' do
   owner 'tomcat'
 end  
 
-#template '/etc/systemd/system/tomcat.service' do
-#  source 'systemd.erb'
-#end
+template '/etc/systemd/system/tomcat.service' do
+  source 'systemd.erb'
+end
 
-#execute 'daemon reload' do
-#  command 'systemctl daemon-reload'
-#end
+execute 'daemon reload' do
+  command 'systemctl daemon-reload'
+end
 
-#service 'tomcat' do
-#  action [:start, :enable]
-#end
+service 'tomcat' do
+  action [:start, :enable]
+end
 
 
 
