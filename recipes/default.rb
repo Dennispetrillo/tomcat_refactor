@@ -52,20 +52,20 @@ fileutils '/opt/tomcat/webapps/' do
   owner 'tomcat'
 end
 
-#filetutils '/opt/tomcat/work/' do
-#  recursive true
-#  owner 'tomcat'
-#end
+fileutils '/opt/tomcat/work/' do
+  recursive true
+  owner 'tomcat'
+end
 
-#filetutils '/opt/tomcat/temp/' do
-#  recursive true
-#  owner 'tomcat'
-#end
+fileutils '/opt/tomcat/temp/' do
+  recursive true
+  owner 'tomcat'
+end
 
-#filetutils '/opt/tomcat/logs/' do
-#  recursive true
-#  owner 'tomcat'
-#end  
+fileutils '/opt/tomcat/logs/' do
+  recursive true
+  owner 'tomcat'
+end  
 
 #template '/etc/systemd/system/tomcat.service' do
 #  source 'systemd.erb'
