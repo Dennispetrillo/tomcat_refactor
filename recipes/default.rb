@@ -37,15 +37,15 @@ fileutils '/opt/tomcat' do
   group 'tomcat'
 end
 
-#fileutils '/opt/tomcat/conf' do
-#  recursive true
-#  file_mode ['g+r']
-#  directory_mode ['g+r']
-#end
+fileutils '/opt/tomcat/conf' do
+  recursive true
+  file_mode ['g+r']
+  directory_mode ['g+r']
+end
 
-#directory 'opt/tomcat/conf' do
-#  mode '0750'
-#end
+directory 'opt/tomcat/conf' do
+  mode '0750'
+end
 
 #filetutils '/opt/tomcat/webapps/' do
 #  recursive true
